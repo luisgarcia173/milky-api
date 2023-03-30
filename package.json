@@ -5,7 +5,7 @@
   "repository": "https://github.com/luisgarcia173/milky-api.git",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon -L src/server.js"
+    "dev": "nodemon -L --exec 'tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts' -e ts"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
