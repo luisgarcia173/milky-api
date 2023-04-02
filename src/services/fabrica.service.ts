@@ -1,5 +1,4 @@
 import { FabricaModel } from '../models/fabrica.model';
-import { FazendaModel } from '../models/fazenda.model';
 
 export async function createFabrica(name: string, distancia: number) {
   try {
