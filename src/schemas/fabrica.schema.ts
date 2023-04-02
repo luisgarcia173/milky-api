@@ -6,7 +6,7 @@ export const createFabricaSchema = object({
       required_error: 'Name is required'
     }),
     distancia: number({
-      required_error: 'Distancia ir required',
+      required_error: 'Distancia is required',
       invalid_type_error: 'Distancia must be a number',
     }).positive('Distancia must be greater than zero')
   })

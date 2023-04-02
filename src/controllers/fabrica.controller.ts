@@ -1,10 +1,13 @@
 import { Request, Response } from 'express';
-import { createFabrica, deleteFabrica, getFabrica, listFabrica, updateFabrica } from '../services/fabrica.service';
+import {
+  createFabrica,
+  deleteFabrica,
+  getFabrica,
+  listFabrica,
+  updateFabrica,
+} from '../services/fabrica.service';
 
-export async function createFabricaHandler(
-  req: Request, 
-  res: Response
-) {
+export async function createFabricaHandler(req: Request, res: Response) {
   try {
     const { name, distancia } = req.body;
     const fabrica = await createFabrica(name, distancia);
@@ -13,12 +16,9 @@ export async function createFabricaHandler(
     console.error(e);
     return res.status(409).send(e.message);
   }
-};
+}
 
-export async function listFabricaHandler(
-  req: Request, 
-  res: Response
-) {
+export async function listFabricaHandler(req: Request, res: Response) {
   try {
     const fabricas = await listFabrica();
     return res.status(200).send(fabricas);
@@ -26,12 +26,9 @@ export async function listFabricaHandler(
     console.error(e);
     return res.status(404).send(e.message);
   }
-};
+}
 
-export async function getFabricaHandler(
-  req: Request, 
-  res: Response
-) {
+export async function getFabricaHandler(req: Request, res: Response) {
   try {
     const { id } = req.params;
     const fabrica = await getFabrica(id);
@@ -40,12 +37,9 @@ export async function getFabricaHandler(
     console.error(e);
     return res.status(404).send(e.message);
   }
-};
+}
 
-export async function updateFabricaHandler(
-  req: Request, 
-  res: Response
-) {
+export async function updateFabricaHandler(req: Request, res: Response) {
   try {
     const { id } = req.params;
     const { name, distancia } = req.body;
@@ -56,19 +50,16 @@ export async function updateFabricaHandler(
     console.error(e);
     return res.status(404).send(e.message);
   }
-};
+}
 
-export async function deleteFabricaHandler(
-  req: Request, 
-  res: Response
-) {
+export async function deleteFabricaHandler(req: Request, res: Response) {
   try {
     const { id } = req.params;
     await deleteFabrica(id);
-    
+
     return res.status(204).json();
   } catch (e: any) {
     console.error(e);
     return res.status(404).send(e.message);
   }
-};
+}
