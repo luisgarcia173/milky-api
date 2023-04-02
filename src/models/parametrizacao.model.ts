@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 
 export interface PrecoBaseInput {
   valor: number;
+  custoKmPadrao: number;
+  custoKmAdicional: number;
   vigenciaIni: Date;
   vigenciaFin: Date;
 }
@@ -20,6 +22,8 @@ export interface ParametrizacaoDocument extends mongoose.Document {
 
 const precoBaseSchema = new mongoose.Schema({
   valor: {type: Number, required: true},
+  custoKmPadrao: {type: Number, required: true},
+  custoKmAdicional: {type: Number, required: true},
   vigenciaIni: {type: Date},
   vigenciaFin: {type: Date}
 },

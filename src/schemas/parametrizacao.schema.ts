@@ -6,7 +6,15 @@ export const createParametrizacaoSchema = object({
       valor: number({
         required_error: 'Valor is required',
         invalid_type_error: 'Valor must be a number',
-      }).positive('Valor must be greater than zero')
+      }).positive('Valor must be greater than zero'),
+      custoKmPadrao: number({
+        required_error: 'custoKmPadrao is required',
+        invalid_type_error: 'custoKmPadrao must be a number',
+      }).positive('custoKmPadrao must be greater than zero'),
+      custoKmAdicional: number({
+        required_error: 'custoKmAdicional is required',
+        invalid_type_error: 'custoKmAdicional must be a number',
+      }).positive('custoKmAdicional must be greater than zero')
     }),
     bonusProducao: object({
       quantidade: number({
