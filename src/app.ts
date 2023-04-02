@@ -2,6 +2,7 @@ import express from 'express';
 import { router } from './routes';
 import { fazendeiroRouter } from './routes/fazendeiro.route';
 import { fazendaRouter } from './routes/fazenda.route';
+import { fabricaRouter } from './routes/fabrica.route';
 
 const app = express();
 
@@ -12,5 +13,6 @@ app.use(express.json());
 app.use(router);
 app.use(fazendeiroRouter);
 app.use(fazendaRouter);
+app.use(fabricaRouter);
 
 export { app };
