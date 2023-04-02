@@ -5,6 +5,7 @@ import { fazendaRouter } from './routes/fazenda.route';
 import { fabricaRouter } from './routes/fabrica.route';
 import { producaoRouter } from './routes/producao.route';
 import { parametrizacaoRouter } from './routes/parametrizacao.route';
+import { vendaRouter } from './routes/venda.route';
 
 const app = express();
 
@@ -18,5 +19,6 @@ app.use(fazendaRouter);
 app.use(fabricaRouter);
 app.use(producaoRouter);
 app.use(parametrizacaoRouter);
+app.use(vendaRouter);
 
 export { app };
