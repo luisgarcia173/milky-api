@@ -11,7 +11,9 @@ import {
 
 const router = Router();
 
-// Fazenda
+// FIXME manter em dialeto
+
+// Fazenda 
 router.post(
   '/api/fazendeiro/:fazendeiro/fazenda',
   validateResource(createFazendaSchema),

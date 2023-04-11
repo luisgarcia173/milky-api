@@ -1,5 +1,7 @@
 import { object, string } from "zod";
 
+// missing typing for controller
+
 export const createFazendaSchema = object({
   body: object({
     name: string({

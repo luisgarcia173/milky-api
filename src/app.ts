@@ -8,7 +8,7 @@ import { parametrizacaoRouter } from './routes/parametrizacao.route';
 import { vendaRouter } from './routes/venda.route';
 import { reportRouter } from './routes/report.route';
 
-const app = express();
+const app = express(); // falta tipagem para Typescript
 
 // Parse request/response object
 app.use(express.json());

@@ -9,8 +9,8 @@ import {
 
 export async function createFazendaHandler(req: Request, res: Response) {
   try {
-    const { fazendeiro } = req.params;
-    const { name } = req.body;
+    const { fazendeiro } = req.params; // FIXME especificar que é o ID
+    const { name } = req.body; // FIXME usar o body do zod (ja validado)
     const fazenda = await createFazenda(fazendeiro, name);
     return res.status(201).send(fazenda);
   } catch (e: any) {
@@ -23,9 +23,9 @@ export async function listFazendaHandler(req: Request, res: Response) {
   try {
     const fazendas = await listFazenda();
     return res.status(200).send(fazendas);
-  } catch (e: any) {
+  } catch (e: any) { //FIXME padronizacao de erro via middleware
     console.error(e);
-    return res.status(404).send(e.message);
+    return res.status(404).send(e.message); //FIXME validar regra de negocio dentro do try/catch
   }
 }
 
@@ -34,7 +34,7 @@ export async function getFazendaHandler(req: Request, res: Response) {
     const { id } = req.params;
     const fazenda = await getFazenda(id);
     return res.status(200).send(fazenda);
-  } catch (e: any) {
+  } catch (e: any) { //FIXME tipar o erro
     console.error(e);
     return res.status(404).send(e.message);
   }
