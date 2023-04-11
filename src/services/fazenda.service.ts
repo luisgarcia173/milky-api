@@ -21,7 +21,7 @@ export async function listFazenda() {
 export async function getFazenda(id: string) {
   try {
     const fazenda = await FazendaModel.findById(id);
-    return fazenda;
+    return fazenda; // FIXME return ja retorna Promise nao ha necessidade do await
   } catch (e: any) {
     throw new Error(e);
   }
